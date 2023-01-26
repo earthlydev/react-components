@@ -1,0 +1,237 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-primary: 231 12% 12%;
+  --clr-accent: 231 7% 9%;
+  --clr-orange: 25 79% 78%;
+  --clr-blue: 212 72% 60%;
+  --clr-grey: 254 6% 58%;
+  --clr-white: 0 0% 100%;
+
+
+  /* font-sizes */
+  --fs-600: 1.5625rem;
+  --fs-500: 1rem;
+  --fs-400: 0.875rem;
+  --fs-300: 0.8rem;
+  --fs-200: 0.64rem;
+
+  /* font-families */
+  --ff-sans-normal: Inter, sans-serif;
+}
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(var(--clr-white));
+}
+
+/* set up the body */
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-500);
+  color: hsl(var(--clr-white));
+  background-color: hsl(227 11% 15%);
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow>*:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.sr-only {
+  /* Read contents for ie: button with no text for a screen reader*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.bg-accent {
+  background-color: hsl(var(--clr-accent));
+}
+
+.bg-white {
+ background-color: hsl(var(--clr-white));
+}
+
+.bg-blue {
+  background-color: hsl(var(--clr-blue));
+}
+
+.text-primary {
+  color: hsl(var(--clr-primary));
+}
+
+.text-orange {
+  color: hsl(var(--clr-orange));
+}
+
+.text-grey {
+  color: hsl(var(--clr-grey));
+}
+
+/* typography */
+.fs-600 { font-size: var(--fs-600);}
+.fs-500 { font-size: var(--fs-500);}
+.fs-400 { font-size: var(--fs-400);}
+.fs-300 { font-size: var(--fs-300);}
+.fs-200 { font-size: var(--fs-200);}
+
+.fs-600 {
+  line-height: 1.1;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* temporary size */
+.avi {
+  width: 19.8125rem;
+  aspect-ratio: 1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+.container {
+  position: relative;
+  top: 2rem;
+  margin: 0 auto;
+  max-width: 19.8125rem;
+  background-color: hsl(var(--clr-primary));
+  border-radius: 10px;
+}
+
+.contact-info {
+  margin-block: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  width: 7.1875rem;
+  padding-block: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn--email {
+  margin-right: 1.25rem;
+}
+
+.icon {
+  position: relative;
+  top: 2.5px;
+  width: 1em;
+  aspect-ratio: 1;
+  margin-right: .75rem;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+.info {
+  padding-inline: 2.1875rem;
+}
+
+.info--about {
+  margin-bottom: 1rem;
+}
+
+.info--interests {
+  margin-bottom: 2rem;
+}
+
+.info > h2 {
+  margin-bottom: .25rem;
+}
+
+.info > p {
+  line-height: 150%;
+}
+
+footer {
+  padding-block: .5rem .2rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.social-media {
+  padding: 0;
+  justify-content: center;
+}
+
+.social-media > li {
+  list-style: none;
+}
+
+.social-media-icons {
+  width: 25px;
+  height: 25px;;
+}
