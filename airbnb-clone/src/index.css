@@ -1,16 +1,163 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+:root {
+  /* font-families */
+  --ff-sans-serif: 'Poppins', sans-serif;
+
+  /* font weight */
+  --fw-bold: 600;
+  --fw-normal: 300;
+
+  /* font sizes */
+  --fs-500: 2.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.75rem;
+
+  color: hsl(0 0 10%);
+  background-color: hsl(0 90% 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+ 
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+/* base styles */
+body {
+  font-family: var(--ff-sans-serif);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-normal);
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flow>*:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+/* typography */
+  /* font weight */
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-normal {
+  font-weight: var(--fw-normal);
+}
+
+  /* font sizes */
+
+.fs-500 {  
+ font-size: var(--fs-500);
+}
+
+.fs-400 {
+  font-size: var(--fs-400); 
+}
+
+.fs-300 { 
+  font-size: var(--fs-300);
+}
+
+.text-grey {
+  color: rgb(145 142 155);
+}
+
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+
+/* navbar */
+.primary-nav {
+  height: 4.375rem;
+  padding: 1.25rem 2rem;
+  box-shadow: 0 2.98px 7.45px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+  max-width: 100%;
+}
+
+/* hero */
+.hero--feat{
+  padding: 1.5rem 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  --gap: .75rem;
+}
+
+.hero--photo {
+  max-width: 25rem;
+  align-self: center;
+}
+
+.hero--text {
+  max-width: 50ch;
+}
+
+/* card component */
+.card {
+  margin-top: 2rem;
+  padding-inline: 2rem;
+  flex-direction: column;
+}
+
+.card--img {
+  max-width: 11rem;
+  border-radius: 9px;
+}
+
+.card--stats {
+  --gap: .25rem;
+  align-items: center;
+}
+
+.card--star {
+  height: 14px;
 }
