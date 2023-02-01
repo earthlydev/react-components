@@ -75,7 +75,7 @@ body {
 /* general */
 .flex {
   display: flex;
-  gap: var(--gap, 1rem);
+  gap: var(--gap, .25rem);
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -129,7 +129,6 @@ body {
   padding: 1.5rem 2rem;
   flex-direction: column;
   align-items: flex-start;
-  --gap: .75rem;
 }
 
 .hero--photo {
@@ -142,10 +141,17 @@ body {
 }
 
 /* card component */
-.card {
-  margin-top: 2rem;
+.card--list {
   padding-inline: 2rem;
+  overflow-x: auto;
+  gap: 1.25rem;
+}
+
+.card {
+  position: relative;
+  margin-top: 2rem;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .card--img {
@@ -154,10 +160,21 @@ body {
 }
 
 .card--stats {
-  --gap: .25rem;
+
   align-items: center;
 }
 
 .card--star {
   height: 14px;
+}
+
+.card--badge {
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  padding: 3px 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  font-size: 0.64rem;
 }
