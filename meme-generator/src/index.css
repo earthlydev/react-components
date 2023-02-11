@@ -1,0 +1,203 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* font-families */
+  --ff-sans-serif: 'Inter', sans-serif;
+  --ff-sans-primary: 'Karla', sans-serif;
+  --ff-impact: Impact,
+    Haettenschweiler,
+    'Arial Narrow Bold',
+    sans-serif;
+
+  /* font-sizes */
+  --fs-600: 2rem;
+  --fs-500: 1.3rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+
+  /* font-weight */
+  --fw-900: 900;
+  --fw-700: 700;
+  --fw-400: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* base styles */
+body {
+  font-family: var(--ff-sans-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-700);
+  color: hsla(0, 0%, 100%, 1);
+}
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.flex {
+  display: flex;
+  gap: var(--gap, .25rem);
+}
+
+.flow>*:where(:not(:first-child)) {
+  margin-bottom: var(--flow-space, .5em);
+}
+
+/* colors */
+
+.bg-purple {
+  background: linear-gradient(90deg, hsla(284, 58%, 32%, 1) 1.18%, hsla(284, 69%, 49%, 1) 100%);
+}
+
+/* typography */
+.ff-sans-serif {
+  font-family: var(--ff-sans-serif);
+}
+
+.ff-impact {
+  font-family: var(--ff-impact);
+}
+
+/* font-size */
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+/* font weight */
+.fw-900 {
+  font-weight: 900;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-400 {
+  font-weight: 400;
+}
+
+/* --------------- */
+/* Components      */
+/* --------------- */
+
+/* primary header */
+.primary-header {
+  padding-inline: 2rem;
+  width: 100%;
+  min-height: 4.0625rem;
+  align-items: center;
+}
+
+.logo-img {
+  width: 2rem;
+  height: 1.75rem;
+}
+
+.logo-text { 
+  letter-spacing: -0.1em;
+  padding-inline: .5rem;
+}
+
+
+.proj-num {
+  margin-left: auto;
+}
+
+/* Meme Form */
+.meme-form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-inline: 2rem;
+}
+
+
+input {
+  border: 1px solid hsla(255, 5%, 84%, 1);
+  border-radius: 5px;
+  text-indent: 1em;
+}
+
+input::placeholder {
+  font-family: var(--ff-sans-primary);
+  font-weight: 400;
+  font-size: var(--fs-200)
+}
+
+/* Button */
+
+.btn {
+  grid-column: 1 / -1 ;
+  border: none;
+  border-radius: 5px;
+  color: hsla(0, 0%, 100%, 1);
+  letter-spacing: -0.1em;
+  font-family: var(--ff-sans-serif);
+}
+
+.meme-img {
+  object-fit: contain;
+  width: 100%;
+  padding: 2rem;
+  max-height: 70vh;
+}
+
+/* layout */
+.container {
+  margin: 0 auto;
+  max-width: 37.5rem;
+}
